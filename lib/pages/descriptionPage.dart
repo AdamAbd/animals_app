@@ -13,21 +13,17 @@ class _DescriptionPageState extends State<DescriptionPage> {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
+              backgroundColor: Colors.green[500],
               pinned: true,
               expandedHeight: 250.0,
-              title: IconButton(
-                icon: Icon(Icons.arrow_back),
-                padding: const EdgeInsets.only(right: 30.0),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+              title: Text(
+                "GAJAH",
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               flexibleSpace: FlexibleSpaceBar(
-                centerTitle: true,
-                title: Text(
-                  "GAJAH",
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-                ),
                 background: Image.asset(
                   "assets/gajah.jpg",
                   fit: BoxFit.cover,

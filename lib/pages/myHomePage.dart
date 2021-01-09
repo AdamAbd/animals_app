@@ -1,3 +1,4 @@
+import 'package:animals_app/pages/descriptionPage.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -42,7 +43,9 @@ class MyHomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) {},
+                            builder: (context) {
+                              return DescriptionPage();
+                            },
                           ),
                         );
                       },
@@ -58,7 +61,16 @@ class MyHomePage extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return DescriptionPage();
+                        },
+                      ),
+                    );
+                  },
                   child: Card(
                     child: Stack(
                       alignment: Alignment.bottomLeft,
