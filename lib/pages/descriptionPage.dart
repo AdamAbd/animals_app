@@ -5,7 +5,7 @@ import 'package:animals_app/model/animals_data.dart';
 class DescriptionPage extends StatelessWidget {
   final AnimalsData animals;
 
-  DescriptionPage(this.animals);
+  DescriptionPage({@required this.animals});
 
   @override
   Widget build(BuildContext context) {
