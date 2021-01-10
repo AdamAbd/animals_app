@@ -16,7 +16,11 @@ class _SettingPageState extends State<SettingPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 29.0, left: 14),
+              padding: const EdgeInsets.only(
+                top: 29.0,
+                bottom: 14.0,
+                left: 14.0,
+              ),
               child: Row(
                 children: [
                   IconButton(
@@ -36,7 +40,6 @@ class _SettingPageState extends State<SettingPage> {
                 ],
               ),
             ),
-            SizedBox(height: 14.0),
             Card(
               child: ListTile(
                 leading: Switch(
@@ -56,8 +59,15 @@ class _SettingPageState extends State<SettingPage> {
               ),
             ),
             Card(
-              child: ListTile(
-                title: Text("About Us"),
+              child: ExpansionTile(
+                leading: Icon(Icons.group),
+                title: const Text("About Us"),
+                children: [
+                  const Text(
+                    "Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, PadangIndonesia, Sumatra, PadangIndonesia, Sumatra, Padang Indonesia, Sumatra, Padang ",
+                  ),
+                ],
+                childrenPadding: EdgeInsets.all(14.0),
               ),
             ),
           ],
