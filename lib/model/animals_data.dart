@@ -3,12 +3,12 @@ class AnimalsData {
   List imageList;
 
   AnimalsData({
-    this.name,
-    this.image,
-    this.location,
-    this.desc,
-    this.vidUrl,
-    this.imageList,
+    this.name = "",
+    this.image = "",
+    this.location = "",
+    this.desc = "",
+    this.vidUrl = "",
+    this.imageList = const [],
   });
 }
 

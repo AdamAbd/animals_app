@@ -4,12 +4,12 @@ import 'package:video_player/video_player.dart';
 
 class ChewieItem extends StatefulWidget {
   // This will contain the URL/asset path which we want to play
-  final VideoPlayerController videoPlayerController;
+  final String vidUrl;
   final bool looping;
 
   ChewieItem({
-    this.videoPlayerController,
-    this.looping,
+    this.vidUrl = "",
+    this.looping = true,
   });
 
   @override
@@ -24,7 +24,9 @@ class _ChewieItemState extends State<ChewieItem> {
     super.initState();
     // Wrapper on top of the videoPlayerController
     _chewieController = ChewieController(
-      videoPlayerController: widget.videoPlayerController,
+      videoPlayerController: VideoPlayerController.network(
+        widget.vidUrl,
+      ),
       aspectRatio: 16 / 9,
       // Prepare the video to be played and display the first frame
       autoInitialize: true,
@@ -56,7 +58,9 @@ class _ChewieItemState extends State<ChewieItem> {
   void dispose() {
     super.dispose();
     // IMPORTANT to dispose of all the used resources
-    widget.videoPlayerController.dispose();
+    VideoPlayerController.network(
+      widget.vidUrl,
+    ).dispose();
     _chewieController.dispose();
   }
 }

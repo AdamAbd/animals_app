@@ -117,9 +117,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
                 SizedBox(
                   height: 200,
                   child: ChewieItem(
-                    videoPlayerController: VideoPlayerController.network(
-                      widget.animals.vidUrl,
-                    ),
+                    vidUrl: widget.animals.vidUrl,
                     looping: true,
                   ),
                 ),
