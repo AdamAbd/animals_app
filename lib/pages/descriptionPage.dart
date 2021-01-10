@@ -62,16 +62,18 @@ class _DescriptionPageState extends State<DescriptionPage> {
                               WidgetSpan(
                                 child: Padding(
                                   padding: const EdgeInsets.only(
-                                    bottom: 1.0,
                                     right: 2.0,
                                   ),
-                                  child: Icon(Icons.location_on),
+                                  child: Icon(
+                                    Icons.location_on,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                               TextSpan(
                                 text: widget.animals.location,
                                 style: TextStyle(
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.bold,
                                   fontSize: 18.0,
                                   color: Colors.white,
                                 ),
