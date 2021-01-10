@@ -1,5 +1,5 @@
 import 'package:animals_app/model/animals_data.dart';
-import 'package:animals_app/widgets/widgets.dart';
+import 'package:animals_app/widgets/customCard.dart';
 import 'package:flutter/material.dart';
 
 import 'descriptionPage.dart';
@@ -64,18 +64,21 @@ class MyHomePage extends StatelessWidget {
             child: ListView(
               children: animalList
                   .map(
-                    (animals) => FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return DescriptionPage(animals: animals);
-                            },
-                          ),
-                        );
-                      },
-                      child: CustomCard(animals: animals),
+                    (animals) => Padding(
+                      padding: const EdgeInsets.only(bottom: 14.0),
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return DescriptionPage(animals: animals);
+                              },
+                            ),
+                          );
+                        },
+                        child: CustomCard(animals: animals),
+                      ),
                     ),
                   )
                   .toList(),
