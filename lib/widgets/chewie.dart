@@ -8,10 +8,9 @@ class ChewieItem extends StatefulWidget {
   final bool looping;
 
   ChewieItem({
-    @required this.videoPlayerController,
-    @required this.looping,
-    Key key,
-  }) : super(key: key);
+    this.videoPlayerController,
+    this.looping,
+  });
 
   @override
   _ChewieItemState createState() => _ChewieItemState();

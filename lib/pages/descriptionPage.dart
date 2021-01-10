@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:video_player/video_player.dart';
 import 'package:animals_app/widgets/chewie.dart';
 
 import 'package:animals_app/model/animals_data.dart';
+import 'package:animals_app/widgets/buttonFav.dart';
 
 class DescriptionPage extends StatefulWidget {
   final AnimalsData animals;
 
-  DescriptionPage({@required this.animals});
+  DescriptionPage(this.animals);
 
   @override
   _DescriptionPageState createState() => _DescriptionPageState();
@@ -21,6 +23,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
+              actions: [ButtonFavorite()],
               pinned: true,
               expandedHeight: 250.0,
               flexibleSpace: FlexibleSpaceBar(

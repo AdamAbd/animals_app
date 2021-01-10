@@ -1,16 +1,14 @@
-import 'package:flutter/cupertino.dart';
-
 class AnimalsData {
   String name, image, location, desc, vidUrl;
   List imageList;
 
   AnimalsData({
-    @required this.name,
-    @required this.image,
-    @required this.location,
-    @required this.desc,
-    @required this.vidUrl,
-    @required this.imageList,
+    this.name,
+    this.image,
+    this.location,
+    this.desc,
+    this.vidUrl,
+    this.imageList,
   });
 }
 

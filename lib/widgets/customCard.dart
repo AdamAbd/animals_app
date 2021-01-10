@@ -5,7 +5,7 @@ import 'package:animals_app/model/animals_data.dart';
 class CustomCard extends StatelessWidget {
   final AnimalsData animals;
 
-  CustomCard({@required this.animals});
+  CustomCard(this.animals);
 
   @override
   Widget build(BuildContext context) {

@@ -74,12 +74,12 @@ class MyHomePage extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return DescriptionPage(animals: animals);
+                                return DescriptionPage(animals);
                               },
                             ),
                           );
                         },
-                        child: CustomCard(animals: animals),
+                        child: CustomCard(animals),
                       ),
                     ),
                   )
