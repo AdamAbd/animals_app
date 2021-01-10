@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class ChewieItem extends StatefulWidget {
-  // Berisi URL Video
+  /// Berisi URL Video
   final String vidUrl;
   final bool looping;
 
-  // Inisialisasi
+  /// Inisialisasi
   ChewieItem({
     this.vidUrl = "",
     this.looping = true,
@@ -18,22 +18,27 @@ class ChewieItem extends StatefulWidget {
 }
 
 class _ChewieItemState extends State<ChewieItem> {
-  ChewieController _chewieController;
+  /// Func [late] tidak bisa dijalankan di debug mode
+  //TODO : Hapus [late] saat mau dijalankan
+  late ChewieController _chewieController;
 
   @override
   void initState() {
     super.initState();
-    // Wrapper on top of the videoPlayerController
+
+    /// Wrapper on top of the videoPlayerController
     _chewieController = ChewieController(
       videoPlayerController: VideoPlayerController.network(
         widget.vidUrl,
       ),
       aspectRatio: 16 / 9,
-      // Prepare the video to be played and display the first frame
+
+      /// Prepare the video to be played and display the first frame
       autoInitialize: true,
       looping: widget.looping,
-      // Errors can occur for example when trying to play a video
-      // from a non-existent URL
+
+      /// Errors can occur for example when trying to play a video
+      /// from a non-existent URL
       errorBuilder: (context, errorMessage) {
         return Center(
           child: Text(
@@ -58,7 +63,8 @@ class _ChewieItemState extends State<ChewieItem> {
   @override
   void dispose() {
     super.dispose();
-    // IMPORTANT to dispose of all the used resources
+
+    /// IMPORTANT to dispose of all the used resources
     VideoPlayerController.network(
       widget.vidUrl,
     ).dispose();

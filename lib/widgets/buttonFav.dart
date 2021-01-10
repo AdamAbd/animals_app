@@ -6,6 +6,7 @@ class ButtonFavorite extends StatefulWidget {
 }
 
 class _ButtonFavoriteState extends State<ButtonFavorite> {
+  /// Inisialisasi Func [isFavorite]
   bool isFavorite = false;
 
   @override
@@ -13,11 +14,12 @@ class _ButtonFavoriteState extends State<ButtonFavorite> {
     return IconButton(
       icon: Icon(
         Icons.favorite,
-        // Untuk membuat warna berubah saat ditekan
+
+        /// Func [isFavorite] berubah warna
         color: isFavorite ? Colors.red : Colors.white,
       ),
       onPressed: () {
-        // Saat button ditekan state akan berubah
+        /// Saat button ditekan state [isFavorite] akan berubah
         setState(() {
           isFavorite = !isFavorite;
         });

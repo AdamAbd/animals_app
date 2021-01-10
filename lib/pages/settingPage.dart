@@ -27,7 +27,7 @@ class _SettingPageState extends State<SettingPage> {
                     IconButton(
                       icon: Icon(Icons.arrow_back),
                       padding: const EdgeInsets.only(right: 30.0),
-                      // Digunakan untuk menghapus page paling atas dan kembali ke page dibawahnya
+                      /// Digunakan untuk menghapus page paling atas dan kembali ke page dibawahnya
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -57,16 +57,16 @@ class _SettingPageState extends State<SettingPage> {
                       color: Colors.white,
                     ),
                   ),
-                  // Saat ditekan Func 'changeBrightness' akan berjalan
+                  /// Saat ditekan Func [changeBrightness] akan berjalan
                   onTap: changeBrightness,
                 ),
               ),
               Card(
-                // Tile yg bisa meluas
+                /// Tile yg bisa meluas
                 child: ExpansionTile(
                   leading: Icon(Icons.group),
                   title: const Text("About Me"),
-                  // Biasa digunakan untuk ListTile
+                  /// Biasa digunakan untuk ListTile
                   children: [
                     const Text(
                       "Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, PadangIndonesia, Sumatra, PadangIndonesia, Sumatra, Padang Indonesia, Sumatra, Padang ",
@@ -80,7 +80,7 @@ class _SettingPageState extends State<SettingPage> {
                   leading: Icon(Icons.copyright),
                   title: const Text("Hak Cipta"),
                   children: [
-                    // Digunakan menampilakan text yang beragam dalam satu kolom widget
+                    /// Digunakan menampilakan text yang beragam dalam satu kolom widget
                     RichText(
                       text: TextSpan(
                         text: "LOGO\n\n",
@@ -141,7 +141,7 @@ class _SettingPageState extends State<SettingPage> {
     );
   }
 
-  // Func 'changeBrightness' merubah tema brightness awal
+  /// Func [changeBrightness] merubah tema brightness awal
   void changeBrightness() {
     DynamicTheme.of(context).setBrightness(
         Theme.of(context).brightness == Brightness.dark

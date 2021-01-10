@@ -7,7 +7,8 @@ import 'pages/myHomePage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  //set Device orientation
+
+  /// Set Device orientation dengan [SystemChrome]
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(MyApp());
@@ -17,7 +18,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Set Theme saat func 'changeBrightness' berubah
+    /// Set Theme saat func [changeBrightness] berubah
     return DynamicTheme(
         defaultBrightness: Brightness.dark,
         data: (brightness) => ThemeData(

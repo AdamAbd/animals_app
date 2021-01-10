@@ -24,9 +24,11 @@ class _DescriptionPageState extends State<DescriptionPage> {
           return [
             SliverAppBar(
               pinned: true,
-              // Tinggi AppBar saat expand
+
+              /// Set inggi AppBar saat expand
               expandedHeight: 250.0,
-              // Bagian yang fleksibel pada sliver AppBar
+
+              /// Bagian yang fleksibel pada sliver AppBar
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
                   widget.animals.name,
@@ -40,7 +42,8 @@ class _DescriptionPageState extends State<DescriptionPage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              // Utk menampilkan widget di kanan (bisa banyak widget)
+
+              /// Utk menampilkan widget di kanan (bisa banyak widget)
               actions: [ButtonFavorite()],
             ),
           ];
@@ -118,13 +121,15 @@ class _DescriptionPageState extends State<DescriptionPage> {
                     ],
                   ),
                 ),
-                // Chewie (Video Player Custom) Placeholder
+
+                /// Chewie (Video Player Custom) Placeholder
                 SizedBox(
                   height: 200,
                   child: ChewieItem(
-                    // Set Video URL
+                    /// Set Video URL
                     vidUrl: widget.animals.vidUrl,
-                    // Set lopping video
+
+                    /// Set lopping video
                     looping: true,
                   ),
                 ),
@@ -134,12 +139,14 @@ class _DescriptionPageState extends State<DescriptionPage> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.only(right: 16.0),
-                    // Menampilkan list data image dari data animals
+
+                    /// Menampilkan list data image dari data animals
                     children: widget.animals.imageList
                         .map(
                           (images) => Padding(
                             padding: const EdgeInsets.only(left: 16.0),
-                            // Digunakan utk membuat rounded corner
+
+                            /// Digunakan utk membuat rounded corner
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -158,9 +165,10 @@ class _DescriptionPageState extends State<DescriptionPage> {
           ),
         ),
       ),
-      // FAB dengan icon + label
+
+      /// FAB dengan icon + label
       floatingActionButton: FloatingActionButton.extended(
-        // Func utk launch any link
+        /// Func utk launch any link
         onPressed: () => launch(
           widget.animals.donateLink,
         ),

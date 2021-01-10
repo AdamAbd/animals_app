@@ -18,7 +18,7 @@ class MyHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Custom title
+                  /// Custom title
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -47,7 +47,7 @@ class MyHomePage extends StatelessWidget {
                         size: 30.0,
                       ),
                       onPressed: () {
-                        // Saat button ditekan, akan diarahkan ke setting
+                        /// Saat button ditekan, akan diarahkan ke setting
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -64,7 +64,7 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Container(
-            // Untuk mendapatkan tinggi layar, dikurang tinggi custom title
+            /// Untuk mendapatkan tinggi layar, dikurang tinggi custom title
             height: MediaQuery.of(context).size.height - 126.0,
             child: ListView(
               children: animalList
@@ -73,7 +73,7 @@ class MyHomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 14.0),
                       child: FlatButton(
                         onPressed: () {
-                          // Saat button ditekan, akan diarahkan ke Deskripsi
+                          /// Saat button ditekan, akan diarahkan ke Deskripsi
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -83,7 +83,8 @@ class MyHomePage extends StatelessWidget {
                             ),
                           );
                         },
-                        // cCard Placeholder
+
+                        /// cCard Placeholder
                         child: CustomCard(animals),
                       ),
                     ),
