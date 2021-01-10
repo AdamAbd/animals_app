@@ -10,19 +10,16 @@ class _ButtonFavoriteState extends State<ButtonFavorite> {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: Colors.white30,
-      child: IconButton(
-        icon: Icon(
-          isFavorite ? Icons.favorite : Icons.favorite_border,
-          color: Colors.red,
-        ),
-        onPressed: () {
-          setState(() {
-            isFavorite = !isFavorite;
-          });
-        },
+    return IconButton(
+      icon: Icon(
+        Icons.favorite,
+        color: isFavorite ? Colors.red : Colors.white,
       ),
+      onPressed: () {
+        setState(() {
+          isFavorite = !isFavorite;
+        });
+      },
     );
   }
 }
