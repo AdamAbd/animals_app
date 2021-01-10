@@ -16,26 +16,38 @@ class AnimalsData {
 var animalList = {
   AnimalsData(
     name: "GAJAH SUMATRA",
-    image: "assets/gajah.jpg",
+    image: "assets/images/gajah.jpg",
     location: "Indonesia, Sumatra, Padang",
     desc:
         "Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, PadangIndonesia, Sumatra, PadangIndonesia, Sumatra, Padang Indonesia, Sumatra, Padang ",
-    imageList: ["assets/gajah.jpg", "assets/gajah.jpg", "assets/gajah.jpg"],
+    imageList: [
+      "assets/images/gajah.jpg",
+      "assets/images/gajah.jpg",
+      "assets/images/gajah.jpg",
+    ],
   ),
   AnimalsData(
     name: "1 GAJAH SUMATRA",
-    image: "assets/gajah.jpg",
+    image: "assets/images/gajah.jpg",
     location: "Indonesia, Sumatra, Padang",
     desc:
         "Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, PadangIndonesia, Sumatra, PadangIndonesia, Sumatra, Padang Indonesia, Sumatra, Padang ",
-    imageList: ["assets/gajah.jpg", "assets/gajah.jpg", "assets/gajah.jpg"],
+    imageList: [
+      "assets/images/gajah.jpg",
+      "assets/images/gajah.jpg",
+      "assets/images/gajah.jpg",
+    ],
   ),
   AnimalsData(
     name: "2 GAJAH SUMATRA",
-    image: "assets/gajah.jpg",
+    image: "assets/images/gajah.jpg",
     location: "Indonesia, Sumatra, Padang",
     desc:
         "Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, PadangIndonesia, Sumatra, PadangIndonesia, Sumatra, Padang Indonesia, Sumatra, Padang ",
-    imageList: ["assets/gajah.jpg", "assets/gajah.jpg", "assets/gajah.jpg"],
+    imageList: [
+      "assets/images/gajah.jpg",
+      "assets/images/gajah.jpg",
+      "assets/images/gajah.jpg",
+    ],
   ),
 };
