@@ -154,7 +154,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
           widget.animals.donateLink,
         ),
         icon: Icon(Icons.money),
-        label: Text("DONATION"),
+        label: Text("DONATE", style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
