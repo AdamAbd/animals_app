@@ -18,17 +18,18 @@ class MyHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  // Custom title
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Hello,",
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
                           fontSize: 36.0,
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Animal Lovers",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -46,6 +47,7 @@ class MyHomePage extends StatelessWidget {
                         size: 30.0,
                       ),
                       onPressed: () {
+                        // Saat button ditekan, akan diarahkan ke setting
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -62,6 +64,7 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Container(
+            // Untuk mendapatkan tinggi layar, dikurang tinggi custom title
             height: MediaQuery.of(context).size.height - 126.0,
             child: ListView(
               children: animalList
@@ -70,6 +73,7 @@ class MyHomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 14.0),
                       child: FlatButton(
                         onPressed: () {
+                          // Saat button ditekan, akan diarahkan ke Deskripsi
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -79,6 +83,7 @@ class MyHomePage extends StatelessWidget {
                             ),
                           );
                         },
+                        // cCard Placeholder
                         child: CustomCard(animals),
                       ),
                     ),

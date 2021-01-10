@@ -13,9 +13,11 @@ class _ButtonFavoriteState extends State<ButtonFavorite> {
     return IconButton(
       icon: Icon(
         Icons.favorite,
+        // Untuk membuat warna berubah saat ditekan
         color: isFavorite ? Colors.red : Colors.white,
       ),
       onPressed: () {
+        // Saat button ditekan state akan berubah
         setState(() {
           isFavorite = !isFavorite;
         });

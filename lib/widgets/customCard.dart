@@ -18,16 +18,15 @@ class CustomCard extends StatelessWidget {
             child: Image.asset(
               animals.image,
               height: 320,
-              width: 320,
               fit: BoxFit.cover,
             ),
           ),
           Container(
-            margin: EdgeInsets.all(8.0),
-            padding: EdgeInsets.all(4.0),
+            margin: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(4.0),
             decoration: BoxDecoration(
               color: Colors.black54,
-              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+              borderRadius: const BorderRadius.all(Radius.circular(6.0)),
             ),
             child: Text(
               animals.name,

@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class ChewieItem extends StatefulWidget {
-  // This will contain the URL/asset path which we want to play
+  // Berisi URL Video
   final String vidUrl;
   final bool looping;
 
+  // Inisialisasi
   ChewieItem({
     this.vidUrl = "",
     this.looping = true,

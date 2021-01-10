@@ -23,9 +23,10 @@ class _DescriptionPageState extends State<DescriptionPage> {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
-              actions: [ButtonFavorite()],
               pinned: true,
+              // Tinggi AppBar saat expand
               expandedHeight: 250.0,
+              // Bagian yang fleksibel pada sliver AppBar
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
                   widget.animals.name,
@@ -39,6 +40,8 @@ class _DescriptionPageState extends State<DescriptionPage> {
                   fit: BoxFit.cover,
                 ),
               ),
+              // Utk menampilkan widget di kanan (bisa banyak widget)
+              actions: [ButtonFavorite()],
             ),
           ];
         },
@@ -51,43 +54,44 @@ class _DescriptionPageState extends State<DescriptionPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 10.0),
                       Container(
-                        padding: EdgeInsets.all(4.0),
+                        margin: EdgeInsets.only(top: 18.0),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 5.0,
+                          vertical: 8.0,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.black54,
                           borderRadius: BorderRadius.all(Radius.circular(6.0)),
                         ),
-                        child: RichText(
-                          text: TextSpan(
-                            text: "",
-                            children: [
-                              WidgetSpan(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                    right: 2.0,
-                                  ),
-                                  child: Icon(
-                                    Icons.location_on,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 2.0,
+                                right: 5.0,
                               ),
-                              TextSpan(
-                                text: widget.animals.location,
+                              child: const Icon(
+                                Icons.location_on,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                widget.animals.location,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18.0,
                                   color: Colors.white,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 14.0),
-                        child: Text(
+                        child: const Text(
                           "Overview",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -103,7 +107,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 14.0),
-                        child: Text(
+                        child: const Text(
                           "Gallery of this animal",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -114,10 +118,13 @@ class _DescriptionPageState extends State<DescriptionPage> {
                     ],
                   ),
                 ),
+                // Chewie (Video Player Custom) Placeholder
                 SizedBox(
                   height: 200,
                   child: ChewieItem(
+                    // Set Video URL
                     vidUrl: widget.animals.vidUrl,
+                    // Set lopping video
                     looping: true,
                   ),
                 ),
@@ -127,10 +134,12 @@ class _DescriptionPageState extends State<DescriptionPage> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.only(right: 16.0),
+                    // Menampilkan list data image dari data animals
                     children: widget.animals.imageList
                         .map(
                           (images) => Padding(
                             padding: const EdgeInsets.only(left: 16.0),
+                            // Digunakan utk membuat rounded corner
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -149,7 +158,9 @@ class _DescriptionPageState extends State<DescriptionPage> {
           ),
         ),
       ),
+      // FAB dengan icon + label
       floatingActionButton: FloatingActionButton.extended(
+        // Func utk launch any link
         onPressed: () => launch(
           widget.animals.donateLink,
         ),
