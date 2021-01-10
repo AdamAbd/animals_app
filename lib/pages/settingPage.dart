@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:dynamic_theme/dynamic_theme.dart';
+import 'package:dynamic_theme/theme_switcher_widgets.dart';
+
 class SettingPage extends StatefulWidget {
   @override
   _SettingPageState createState() => _SettingPageState();
@@ -42,20 +45,20 @@ class _SettingPageState extends State<SettingPage> {
             ),
             Card(
               child: ListTile(
-                leading: Switch(
-                  value: lightOn,
-                  onChanged: (value) {
-                    setState(() {
-                      lightOn = true;
-                    });
-                  },
-                ),
                 title: Text(
                   "Dark Mode",
                   style: TextStyle(
                     fontSize: 18.0,
                   ),
                 ),
+                trailing: Text(
+                  "ON",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.white,
+                  ),
+                ),
+                onTap: changeBrightness,
               ),
             ),
             Card(
@@ -74,5 +77,12 @@ class _SettingPageState extends State<SettingPage> {
         ),
       ),
     );
+  }
+
+  void changeBrightness() {
+    DynamicTheme.of(context).setBrightness(
+        Theme.of(context).brightness == Brightness.dark
+            ? Brightness.light
+            : Brightness.dark);
   }
 }
