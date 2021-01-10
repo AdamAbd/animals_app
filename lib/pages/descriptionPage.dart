@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 
 import 'package:animals_app/model/animals_data.dart';
 
-class DescriptionPage extends StatelessWidget {
+class DescriptionPage extends StatefulWidget {
   final AnimalsData animals;
 
   DescriptionPage({@required this.animals});
 
+  @override
+  _DescriptionPageState createState() => _DescriptionPageState();
+}
+
+class _DescriptionPageState extends State<DescriptionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +23,7 @@ class DescriptionPage extends StatelessWidget {
               pinned: true,
               expandedHeight: 250.0,
               title: Text(
-                animals.name,
+                widget.animals.name,
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -26,7 +31,7 @@ class DescriptionPage extends StatelessWidget {
               ),
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                  animals.image,
+                  widget.animals.image,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -45,7 +50,7 @@ class DescriptionPage extends StatelessWidget {
                       SizedBox(height: 10.0),
                       RichText(
                         text: TextSpan(
-                          text: "${animals.name}\n",
+                          text: "${widget.animals.name}\n",
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -62,7 +67,7 @@ class DescriptionPage extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: animals.location,
+                              text: widget.animals.location,
                               style: TextStyle(
                                 fontWeight: FontWeight.normal,
                                 fontSize: 18.0,
@@ -83,7 +88,7 @@ class DescriptionPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        animals.desc,
+                        widget.animals.desc,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16.0,
@@ -113,7 +118,7 @@ class DescriptionPage extends StatelessWidget {
                   height: 200.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    children: animals.imageList
+                    children: widget.animals.imageList
                         .map(
                           (images) => Padding(
                             padding: const EdgeInsets.only(left: 16.0),
