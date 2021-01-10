@@ -114,7 +114,8 @@ class _DescriptionPageState extends State<DescriptionPage> {
                   height: 200,
                   child: ChewieItem(
                     videoPlayerController: VideoPlayerController.network(
-                        "https://firebasestorage.googleapis.com/v0/b/adamwebporto.appspot.com/o/video%2FScreenrecorder-2018-02-06-18-13-34-379.mp4?alt=media&token=624c61fd-e2ae-4845-8797-18a5e802462e"),
+                      widget.animals.vidUrl,
+                    ),
                     looping: true,
                   ),
                 ),
