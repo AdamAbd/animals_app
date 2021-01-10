@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
+import 'package:animals_app/widgets/chewie.dart';
 
 import 'package:animals_app/model/animals_data.dart';
 
@@ -105,12 +107,16 @@ class _DescriptionPageState extends State<DescriptionPage> {
                           ),
                         ),
                       ),
-                      Container(
-                        width: double.infinity,
-                        height: 200.0,
-                        color: Colors.green,
-                      ),
                     ],
+                  ),
+                ),
+                Container(
+                  height: 200,
+                  child: ChewieItem(
+                    videoPlayerController: VideoPlayerController.network(
+                      'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                    ),
+                    looping: true,
                   ),
                 ),
                 Container(
