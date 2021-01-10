@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DescriptionPage extends StatefulWidget {
-  @override
-  _DescriptionPageState createState() => _DescriptionPageState();
-}
+import 'package:animals_app/model/animals_data.dart';
 
-class _DescriptionPageState extends State<DescriptionPage> {
+class DescriptionPage extends StatelessWidget {
+  final AnimalsData animals;
+
+  DescriptionPage(this.animals);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +18,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
               pinned: true,
               expandedHeight: 250.0,
               title: Text(
-                "GAJAH",
+                animals.name,
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -25,7 +26,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
               ),
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                  "assets/gajah.jpg",
+                  animals.image,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -44,7 +45,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
                       SizedBox(height: 10.0),
                       RichText(
                         text: TextSpan(
-                          text: "GAJAH\n",
+                          text: "${animals.name}\n",
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -61,7 +62,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
                               ),
                             ),
                             TextSpan(
-                              text: "animal.location",
+                              text: animals.location,
                               style: TextStyle(
                                 fontWeight: FontWeight.normal,
                                 fontSize: 18.0,
@@ -82,7 +83,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
                         ),
                       ),
                       Text(
-                        "Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, PadangIndonesia, Sumatra, PadangIndonesia, Sumatra, Padang Indonesia, Sumatra, Padang ",
+                        animals.desc,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16.0,
