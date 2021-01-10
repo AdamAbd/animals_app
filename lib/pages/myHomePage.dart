@@ -64,17 +64,18 @@ class MyHomePage extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 FlatButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DescriptionPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: cCard()),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return DescriptionPage();
+                        },
+                      ),
+                    );
+                  },
+                  child: cCard(),
+                ),
                 SizedBox(height: 15.0),
               ],
             ),
