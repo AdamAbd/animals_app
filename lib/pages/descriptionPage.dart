@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:video_player/video_player.dart';
 import 'package:animals_app/widgets/chewie.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:animals_app/model/animals_data.dart';
 import 'package:animals_app/widgets/buttonFav.dart';
@@ -149,6 +149,13 @@ class _DescriptionPageState extends State<DescriptionPage> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => launch(
+            "https://supporterwwf.org/donation/5/sahabat-satwa/sahabat-harimau.html"),
+        icon: Icon(Icons.money),
+        label: Text("DONATION"),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
