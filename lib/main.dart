@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:dynamic_theme/dynamic_theme.dart';
 
 import 'pages/myHomePage.dart';
-import 'pages/descriptionPage.dart';
-import 'pages/settingPage.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  //set Device orientation
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Set Theme saat func 'changeBrightness' berubah
     return DynamicTheme(
         defaultBrightness: Brightness.dark,
         data: (brightness) => ThemeData(
@@ -21,7 +26,7 @@ class MyApp extends StatelessWidget {
             ),
         themedWidgetBuilder: (context, theme) {
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Animals App',
             theme: theme,
             home: MyHomePage(),
           );
