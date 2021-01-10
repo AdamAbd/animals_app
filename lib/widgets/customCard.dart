@@ -25,7 +25,10 @@ class CustomCard extends StatelessWidget {
           Container(
             margin: EdgeInsets.all(8.0),
             padding: EdgeInsets.all(4.0),
-            color: Colors.white38,
+            decoration: BoxDecoration(
+              color: Colors.white60,
+              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+            ),
             child: Text(
               animals.name,
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),

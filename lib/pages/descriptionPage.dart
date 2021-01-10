@@ -110,7 +110,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 200,
                   child: ChewieItem(
                     videoPlayerController: VideoPlayerController.network(
@@ -124,15 +124,16 @@ class _DescriptionPageState extends State<DescriptionPage> {
                   height: 200.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.only(right: 16.0),
                     children: widget.animals.imageList
                         .map(
                           (images) => Padding(
                             padding: const EdgeInsets.only(left: 16.0),
-                            child: Container(
-                              height: 200,
-                              color: Colors.blue,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
                                 images,
+                                height: 200,
                                 fit: BoxFit.cover,
                               ),
                             ),
