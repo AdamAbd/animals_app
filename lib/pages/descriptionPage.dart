@@ -104,7 +104,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 14.0),
                         child: Text(
-                          "Video of this animal",
+                          "Gallery of this animal",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20.0,
@@ -122,7 +122,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 14.0),
+                  margin: const EdgeInsets.only(top: 14.0, bottom: 80.0),
                   height: 200.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
@@ -151,7 +151,8 @@ class _DescriptionPageState extends State<DescriptionPage> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => launch(
-            "https://supporterwwf.org/donation/5/sahabat-satwa/sahabat-harimau.html"),
+          widget.animals.donateLink,
+        ),
         icon: Icon(Icons.money),
         label: Text("DONATION"),
       ),
