@@ -21,17 +21,16 @@ class _DescriptionPageState extends State<DescriptionPage> {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
-              backgroundColor: Colors.green[500],
               pinned: true,
               expandedHeight: 250.0,
-              title: Text(
-                widget.animals.name,
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               flexibleSpace: FlexibleSpaceBar(
+                title: Text(
+                  widget.animals.name,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                centerTitle: true,
                 background: Image.asset(
                   widget.animals.image,
                   fit: BoxFit.cover,
@@ -50,32 +49,35 @@ class _DescriptionPageState extends State<DescriptionPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 10.0),
-                      RichText(
-                        text: TextSpan(
-                          text: "${widget.animals.name}\n",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32.0,
-                          ),
-                          children: [
-                            WidgetSpan(
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  bottom: 3.0,
-                                  right: 2.0,
+                      Container(
+                        padding: EdgeInsets.all(4.0),
+                        decoration: BoxDecoration(
+                          color: Colors.black54,
+                          borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                        ),
+                        child: RichText(
+                          text: TextSpan(
+                            text: "",
+                            children: [
+                              WidgetSpan(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    bottom: 1.0,
+                                    right: 2.0,
+                                  ),
+                                  child: Icon(Icons.location_on),
                                 ),
-                                child: Icon(Icons.location_on),
                               ),
-                            ),
-                            TextSpan(
-                              text: widget.animals.location,
-                              style: TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 18.0,
+                              TextSpan(
+                                text: widget.animals.location,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 18.0,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       Padding(
@@ -83,7 +85,6 @@ class _DescriptionPageState extends State<DescriptionPage> {
                         child: Text(
                           "Overview",
                           style: TextStyle(
-                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 20.0,
                           ),
@@ -92,7 +93,6 @@ class _DescriptionPageState extends State<DescriptionPage> {
                       Text(
                         widget.animals.desc,
                         style: TextStyle(
-                          color: Colors.black,
                           fontSize: 16.0,
                         ),
                       ),
@@ -101,7 +101,6 @@ class _DescriptionPageState extends State<DescriptionPage> {
                         child: Text(
                           "Video of this animal",
                           style: TextStyle(
-                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 20.0,
                           ),

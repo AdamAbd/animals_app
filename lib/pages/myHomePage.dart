@@ -18,29 +18,31 @@ class MyHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  RichText(
-                    text: const TextSpan(
-                        text: "Hello,\n",
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Hello,",
                         style: TextStyle(
-                          color: Colors.black,
                           fontWeight: FontWeight.normal,
                           fontSize: 36.0,
                         ),
-                        children: [
-                          const TextSpan(
-                            text: "Animal Lovers",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ]),
+                      ),
+                      Text(
+                        "Animal Lovers",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 36.0,
+                          height: 0.9,
+                        ),
+                      ),
+                    ],
                   ),
                   Align(
                     alignment: Alignment.topRight,
                     child: IconButton(
                       icon: const Icon(
                         Icons.settings,
-                        color: Colors.black,
                         size: 30.0,
                       ),
                       onPressed: () {
@@ -60,7 +62,7 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           Container(
-            height: MediaQuery.of(context).size.height - 124.0,
+            height: MediaQuery.of(context).size.height - 126.0,
             child: ListView(
               children: animalList
                   .map(

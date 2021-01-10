@@ -61,7 +61,7 @@ class _SettingPageState extends State<SettingPage> {
             Card(
               child: ExpansionTile(
                 leading: Icon(Icons.group),
-                title: const Text("About Us"),
+                title: const Text("About Me"),
                 children: [
                   const Text(
                     "Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, PadangIndonesia, Sumatra, PadangIndonesia, Sumatra, Padang Indonesia, Sumatra, Padang ",
