@@ -1,5 +1,7 @@
-import 'package:animals_app/pages/descriptionPage.dart';
 import 'package:flutter/material.dart';
+
+import 'descriptionPage.dart';
+import 'settingPage.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -44,7 +46,7 @@ class MyHomePage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return DescriptionPage();
+                              return SettingPage();
                             },
                           ),
                         );
