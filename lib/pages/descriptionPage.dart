@@ -113,19 +113,21 @@ class DescriptionPage extends StatelessWidget {
                   height: 200.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    children: [
-                      SizedBox(width: 14.0),
-                      Container(
-                        width: 330,
-                        height: 200,
-                        color: Colors.blue,
-                      ),
-                      Container(
-                        width: 200.0,
-                        height: 200,
-                        color: Colors.grey,
-                      ),
-                    ],
+                    children: animals.imageList
+                        .map(
+                          (images) => Padding(
+                            padding: const EdgeInsets.only(left: 16.0),
+                            child: Container(
+                              height: 200,
+                              color: Colors.blue,
+                              child: Image.asset(
+                                images,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
                   ),
                 ),
               ],
