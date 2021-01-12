@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:animals_app/widgets/chewie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:animals_app/model/animals_data.dart';
@@ -108,10 +107,13 @@ class _DescriptionPageState extends State<DescriptionPage> {
                           fontSize: 16.0,
                         ),
                       ),
+
+                      //TODO: Update selanjutnya tambahkan video dengan chewie
+
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 14.0),
                         child: const Text(
-                          "Gallery of this animal",
+                          "Photos of this animal",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20.0,
@@ -119,18 +121,6 @@ class _DescriptionPageState extends State<DescriptionPage> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-
-                /// Chewie (Video Player Custom) Placeholder
-                SizedBox(
-                  height: 200,
-                  child: ChewieItem(
-                    /// Set Video URL
-                    vidUrl: widget.animals.vidUrl,
-
-                    /// Set lopping video
-                    looping: true,
                   ),
                 ),
                 Container(
