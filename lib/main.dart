@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
             ),
         themedWidgetBuilder: (context, theme) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Animals App',
             theme: theme,
             home: MyHomePage(),

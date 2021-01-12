@@ -35,6 +35,7 @@ class MyHomePage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 36.0,
                           height: 0.9,
+                          color: Colors.pink,
                         ),
                       ),
                     ],
