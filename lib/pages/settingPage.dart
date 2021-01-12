@@ -27,6 +27,7 @@ class _SettingPageState extends State<SettingPage> {
                     IconButton(
                       icon: Icon(Icons.arrow_back),
                       padding: const EdgeInsets.only(right: 30.0),
+
                       /// Digunakan untuk menghapus page paling atas dan kembali ke page dibawahnya
                       onPressed: () {
                         Navigator.pop(context);
@@ -57,6 +58,7 @@ class _SettingPageState extends State<SettingPage> {
                       color: Colors.white,
                     ),
                   ),
+
                   /// Saat ditekan Func [changeBrightness] akan berjalan
                   onTap: changeBrightness,
                 ),
@@ -66,10 +68,42 @@ class _SettingPageState extends State<SettingPage> {
                 child: ExpansionTile(
                   leading: Icon(Icons.group),
                   title: const Text("About Me"),
+
                   /// Biasa digunakan untuk ListTile
                   children: [
-                    const Text(
-                      "Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, Padang Indonesia, Sumatra, PadangIndonesia, Sumatra, PadangIndonesia, Sumatra, Padang Indonesia, Sumatra, Padang ",
+                    RichText(
+                      text: TextSpan(
+                        text: "SAYA\n\n",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,
+                        ),
+                        children: [
+                          TextSpan(
+                            text:
+                                "Perkenalkan saya Adam, siswa dari SMK Negeri 26 Jakarta dan sedang magang di perusahaan layanan ISP. Walaupun bekerja di sana saya tetap menggeluti hobi saya yaitu mengoding. Saya harap suatu saat hobi saya ini bisa jadi pekerjaan saya kelak. Serta terimakash Dicoding telah menerima saya untuk belajar kelas ini\n\n",
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "APLIKASI INI\n\n",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text:
+                                "Animals App adalah aplikasi yang saya buat untuk memenuhi submission dicoding \"belajar flutter untuk pemula\"\n\nDi dalam aplikasi ini terdapat informasi & foto binatang fitur Donasi, dan Tema Gelap\n",
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                   childrenPadding: EdgeInsets.all(14.0),
@@ -121,7 +155,7 @@ class _SettingPageState extends State<SettingPage> {
                           ),
                           TextSpan(
                             text:
-                                "Gajah = https://supporterwwf.org/donation/7/sahabat-satwa/sahabat-gajah.html\n\nHarimau = https://supporterwwf.org/donation/5/sahabat-satwa/sahabat-harimau.html\n\nOrangutan = https://supporterwwf.org/donation/6/sahabat-satwa/sahabat-orangutan.html\n\nPenyu = https://supporterwwf.org/donation/8/sahabat-satwa/sahabat-penyu.html",
+                                "Gajah = https://supporterwwf.org/donation/7/sahabat-satwa/sahabat-gajah.html\n\nHarimau = https://supporterwwf.org/donation/5/sahabat-satwa/sahabat-harimau.html\n\nOrangutan = https://supporterwwf.org/donation/6/sahabat-satwa/sahabat-orangutan.html\n\nPenyu = https://supporterwwf.org/donation/8/sahabat-satwa/sahabat-penyu.html\n",
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
                               fontSize: 18.0,
